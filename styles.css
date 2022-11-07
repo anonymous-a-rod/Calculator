@@ -1,0 +1,173 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Figtree;
+    font-weight: normal;
+}
+
+body {
+    --accent-color: orangered;
+    --background-color:#e8e8e9;
+    --text-color:#3f3e3f;
+    --display-color: white;
+    --display-background-color: #212125;
+    --button-text-color:#3f3e3f;
+    --button-background-color:#f2f3f5;
+    --displaybackground-color:#d2d3db;
+    --border-color: #212125;
+    --text-color-secondary:#9ba1a6 ;
+    --transition-delay: 1s;
+    
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+
+    
+    transition: var(--transition-delay);
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+body.dark {
+    --accent-color: #D0D066;
+    --background-color: #212125;
+    --text-color: #e8eaeb;
+    --button-background-color: #313135;
+    --border-color:var(--text-color);
+    --text-color-secondary: #9ba1a6;
+    --display-color: var(--text-color);
+    --display-background-color: black;
+    --transition-delay: 1s;
+}
+
+.theme-toggle-button {
+    background-color: var(--accent-color);
+    color: var(--button-text-color);    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: var(--transition-delay);
+    position: relative;
+}
+
+
+
+.theme-toggle-button .icon {
+    height: 50px;
+    width: 50px;    
+}
+
+.sun-moon-container {
+    --rotation: 0;
+    position: absolute;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    height: 200vmin;
+    transform: rotate(calc(var(--rotation) * 1deg));
+    transition: transform var(--transition-delay);
+}
+
+.dark .sun-moon-container {
+    --rotation: 180deg;
+}
+
+.sun,
+.moon {
+    position: absolute;
+    transition: opacity, fill, var(--transition-delay);
+    width: 50px;
+    height: 50px;
+    fill: var(--accent-color);
+}
+
+
+.sun {
+    bottom: 2%;
+}
+
+.moon {
+    top: 2%;
+    opacity: 0;
+}
+
+.dark .sun {
+    opacity: 0;
+}
+
+.dark .moon {
+    opacity: 1;
+}
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px,auto)repeat(5, 100px);
+}
+
+.calculator-grid button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid var(--border-color);
+    outline: none;
+    background-color:var(--button-background-color);
+    color: var(--text-color-secondary);
+}
+
+#number {
+    color: var(--text-color);
+}
+
+.calculator-grid button:hover {
+    background-color: var(--button-background-color);
+    opacity: .75;
+
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.output {
+    grid-column: 1 / -1;
+    background-color: var(--display-background-color);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .previous-operand {
+    color: var(--displaybackground-color);
+    font-size: 1.5rem;
+    opacity: .75;
+}
+
+.current-operand {
+    color: var(--display-color);
+    font-size: 2rem;
+}
+
+
+
+
+
+
+
+
+
+
