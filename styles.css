@@ -12,10 +12,10 @@ body {
     --display-background-color: #212125;
     --button-text-color:#3f3e3f;
     --button-background-color:#f2f3f5;
-    --displaybackground-color:#d2d3db;
     --border-color: #212125;
-    --text-color-secondary:#9ba1a6 ;
+    --text-color-secondary:#9ba1a6;
     --transition-delay: 1s;
+    --button-hover-color: : #d2d3db;
     
     padding: 0;
     margin: 0;
@@ -40,6 +40,7 @@ body.dark {
     --text-color-secondary: #9ba1a6;
     --display-color: var(--text-color);
     --display-background-color: black;
+    --button-hover-color: var(var(--button-background-color));
     --transition-delay: 1s;
 }
 
@@ -52,7 +53,7 @@ body.dark {
     cursor: pointer;
     border: none;
     outline: none;
-    transition: var(--transition-delay);
+
     position: relative;
 }
 
@@ -130,9 +131,8 @@ body.dark {
 }
 
 .calculator-grid button:hover {
-    background-color: var(--button-background-color);
-    opacity: .75;
-
+    background-color: var(--button-hover-color);
+    opacity: .7;
 }
 
 .span-two {
