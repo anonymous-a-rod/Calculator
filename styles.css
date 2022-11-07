@@ -157,7 +157,7 @@ body.dark {
 }
 
 .output .previous-operand {
-    color: var(--displaybackground-color);
+    color: var(--display-color);
     font-size: 1.5rem;
     opacity: .75;
 }
