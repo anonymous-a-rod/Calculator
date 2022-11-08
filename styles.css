@@ -90,13 +90,12 @@ body.dark {
     fill: var(--accent-color);
 }
 
-
 .sun {
-    bottom: 2%;
+    bottom: 5%;
 }
 
 .moon {
-    top: 2%;
+    top: 5%;
     opacity: 0;
 }
 
@@ -128,8 +127,6 @@ body.dark {
     text-align: center;
     justify-content: center;
 }
-
-
 
 #number {
     color: var(--text-color);
